@@ -11,6 +11,7 @@ const Customer = function (customer) {
 };
 
 module.exports.createcustomer = async function (req, response) {
+  console.log("create request received");
   let newCustomer = new Customer(req.body);
   let newid = 0;
   sql.query("INSERT INTO testcustomers SET ?", newCustomer, (err, res) => {
@@ -33,6 +34,7 @@ module.exports.createcustomer = async function (req, response) {
 
 module.exports.customersignin = async function (req, response) {
   try {
+    console.log("signin request received");
     sql.query(
       `SELECT * FROM testcustomers WHERE email = "${req.body.email}"`,
       (err, res) => {
@@ -79,6 +81,7 @@ module.exports.customersignin = async function (req, response) {
 
 module.exports.customerinfo = async function (req, response) {
   try {
+    console.log("info request received");
     sql.query(
       `SELECT * FROM testcustomers WHERE id = "${req.params.id}"`,
       (err, res) => {
