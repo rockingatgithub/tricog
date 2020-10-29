@@ -20,7 +20,8 @@ module.exports.createcustomer = async function (req, response) {
       });
     }
     return response.status(200).json({
-      message: "employee created successfully...",
+      message:
+        "employee created successfully...store the id for future reference",
       data: {
         id: res.insertId,
         ...newCustomer,
