@@ -2,8 +2,8 @@ const express = require("express");
 const app = express();
 const port = 3000;
 const db = require("./config/dbconnect");
-// const passport = require("passport");
-// const passportJWT = require("./config/passport-jwt-strategy");
+const passport = require("passport");
+const passportJWT = require("./config/passport-jwt-strategy");
 
 // ========================using middlewares and listening to the server========================
 
